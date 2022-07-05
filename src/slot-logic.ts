@@ -1,5 +1,6 @@
 
-// repetitions can only appear once in the string, so we can go for a fairly naive approach
+// repetitions can only appear once in the string as the length is 4
+// we can go for a fairly naive approach
 export function hasConsecutiveChars(chars: string[]): boolean {
 	let prev: string | undefined
 	const freqMap = new Map<string, number>

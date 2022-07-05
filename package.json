@@ -9,7 +9,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node src/index",
+    "start": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node dist/index.js",
     "start:dev": "node --no-warnings --experimental-modules --loader ts-node/esm --es-module-specifier-resolution=node src/index",
     "dev": "yarn build --watch",
     "build": "tsc --pretty"

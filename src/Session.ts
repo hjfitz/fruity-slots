@@ -5,10 +5,7 @@ import { User } from './User'
 
 
 export class Session {
-	constructor(
-		private readonly player: User,
-		private readonly machine: Machine,
-	) {}
+	constructor(private readonly player: User, private readonly machine: Machine) {}
 
 	public doRound() {
 		const fee = this.machine.getFee()
