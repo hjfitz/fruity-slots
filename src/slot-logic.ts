@@ -1,5 +1,8 @@
 
 // repetitions can only appear once in the string as the length is 4
+
+import { Engine, GameResult } from './types'
+
 // we can go for a fairly naive approach
 export function hasConsecutiveChars(chars: string[]): boolean {
 	let prev: string | undefined
@@ -23,4 +26,11 @@ export function allSame(chars: string[]): boolean {
 export function allDifferent(chars: string[]): boolean {
 	const uniqChars = [...new Set(chars)]
 	return chars.length === uniqChars.length
+}
+
+export const defaultRules: Engine = {
+	[GameResult.Matching]: () => 20,
+	[GameResult.Unique]:  () => 10,
+	[GameResult.Partial]: (fee: number) => Math.abs(fee * 5),
+	[GameResult.NoWin]: () => 0,
 }

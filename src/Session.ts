@@ -1,5 +1,6 @@
 import { Machine } from './Machine'
 import { Slot } from './Slot'
+import { defaultRules } from './slot-logic'
 import { User } from './User'
 
 
@@ -22,7 +23,6 @@ export class Session {
 
 		this.player.earn(cashWon)
 		this.machine.spend(cashWon)
-		this.machine.logFreePlays()
 	}
 
 	public canSessionContinue(): boolean {
@@ -41,7 +41,7 @@ export class Session {
 export function buildSession(availablePlayerCash: number, chars: string[], sessionFee: number): Session {
 	const slots = Array.from({length: 4}, () => new Slot(chars))
 
-	const machine = new Machine(sessionFee, slots)
+	const machine = new Machine(sessionFee, slots, defaultRules)
 
 	const player = new User(availablePlayerCash)
 

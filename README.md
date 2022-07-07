@@ -15,10 +15,10 @@ Each time a player plays our fruit machine we display four 'slots' each with a r
 - [x] If the characters in each slot are the same then the player wins the jackpot which is £20.
 - [x] If each slot has a different character then the machine should pay out £10.
 - [x] If a given play results in two or more adjacent slots containing the same character then the machine should pay out a prize of 5 times the cost of a single play.
-- [ ] If the machine does not have enough money to pay a prize it should credit the player with a number of free plays equal to the difference between the full prize and the amount of money available. This does not affect a jackpot win.
+- [x] If the machine does not have enough money to pay a prize it should credit the player with a number of free plays equal to the difference between the full prize and the amount of money available. This does not affect a jackpot win.
 
 ## Other Notes/To-do
 
-- [ ] Change Machine#play to use different logic and return a number
-- [ ] Kick off a game loop
-- [ ] Test the requirements - if there's time
+- [x] Change Machine#play to use different logic and return a number
+- [x] Kick off a game loop
+- [ ] Test the requirements - if there's time `// there was no time`

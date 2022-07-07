@@ -1,5 +1,4 @@
-import inquirer from 'inquirer'
-import { getAvailablePlayerCash } from './input'
+import { doGameLoop, getAvailablePlayerCash } from './input'
 import { buildSession } from './Session'
 
 const ALPHABET = ['A', 'B', 'C', 'D', 'E']
@@ -9,19 +8,7 @@ async function main() {
 	const availablePlayerCash = await getAvailablePlayerCash()
 	const session = buildSession(availablePlayerCash, ALPHABET, FEE)
 
-	const continuePrompt = inquirer.createPromptModule()
-
-	let canPlay = true
-	while (canPlay) {
-		const shouldContinue = await continuePrompt([{
-			type: 'confirm',
-			name: 'continue',
-			message: 'Play the fruit machine?'
-		}])
-		session.doRound()
-
-		canPlay = shouldContinue.continue && session.canSessionContinue()
-	}
+	await doGameLoop(session)
 
 	console.log('\nThank you for playing!')
 
